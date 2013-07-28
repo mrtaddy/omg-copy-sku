@@ -1,2 +1,2 @@
 // Copy this to your URL bar:
-javascript:(function(){var t=$("#content .images").data("omgProductSku"),a=$('meta[rel="canonical"]').attr("href"),n={sku:t,url:a};alert(JSON.stringify(n,null,2))})();
+javascript:(function(){var a=$("#content .images").data("omgProductSku"),t=$('meta[rel="canonical"]').attr("href"),n=t.match(/\/([^/]*)$/)[1],r={sku:a,url:t,permalink:n};alert(JSON.stringify(r,null,2))})();
