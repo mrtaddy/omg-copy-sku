@@ -1,2 +1,2 @@
 // Copy this to your URL bar:
-javascript:(function(){var o=$("#content .images").data("omgProductSku");window.prompt("Copy to clipboard: ⌘+C or Ctrl+C then Enter",o)})();
+javascript:(function(){var t=$("#content .images").data("omgProductSku"),n={sku:t};alert(JSON.stringify(n,null,2))})();

@@ -1,6 +1,7 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
   var sku = $('#content .images').data('omgProductSku');
+  var information = {sku: sku}
 
-  window.prompt('Copy to clipboard: ⌘+C or Ctrl+C then Enter', sku);
+  alert(JSON.stringify(information, null, 2));
 }());
