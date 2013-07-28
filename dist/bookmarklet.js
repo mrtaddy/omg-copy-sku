@@ -1,2 +1,2 @@
 // Copy this to your URL bar:
-javascript:(function(){var a=$("#content .images").data("omgProductSku"),t=$('meta[rel="canonical"]').attr("href"),n=t.match(/\/([^/]*)$/)[1],r={sku:a,url:t,permalink:n};alert(JSON.stringify(r,null,2))})();
+javascript:(function(){var t=$("#content .images").data("omgProductSku"),a=$('meta[rel="canonical"]').attr("href"),r=a.match(/\/([^/]*)$/)[1],n=$("#product-properties"),e=$(n.find("dd")[0]).find("a").text(),i={sku:t,url:a,permalink:r,brand:e};alert(JSON.stringify(i,null,2))})();
