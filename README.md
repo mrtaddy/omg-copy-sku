@@ -3,7 +3,7 @@ omg-copy-sku
 
 Copy product sku in ohmyglasses.jp
 
-# Usage
+## Usage
 
 ```javascript
 // Copy this to your URL bar:
