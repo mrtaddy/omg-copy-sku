@@ -1,5 +1,6 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
+  var name = $('#content h2[itemprop="name"]').text();
   var sku = $('#content .images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
   var permalink = url.match(/\/([^/]*)$/)[1];
@@ -17,7 +18,8 @@
   var nosepad = $(properties.find('dd')[10]).text().trim();
   var fitting = $(properties.find('dd')[11]).text().trim();
 
-  var information = { sku: sku,
+  var information = { name: name,
+    sku: sku,
     url: url,
     permalink: permalink,
     brand: brand,
