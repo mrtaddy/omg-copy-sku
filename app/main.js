@@ -1,8 +1,6 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
-  var styleNode = document.createElement('style'),
-    content = document.createTextNode('body { background: cornflowerblue; }');
+  var sku = document.body.querySelector('#content .images').dataset.omgProductSku;
 
-  styleNode.appendChild(content);
-  document.head.appendChild(styleNode);
+  window.prompt('Copy to clipboard: ⌘+C or Ctrl+C then Enter', sku);
 }());
