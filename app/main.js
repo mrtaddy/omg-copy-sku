@@ -1,22 +1,22 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
-  var name = $('#content h2[itemprop="name"]').text();
+  var name = strip($('#content h2[itemprop="name"]').text());
   var sku = $('#content .images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
   var permalink = url.match(/\/([^/]*)$/)[1];
-  var properties = $('#product-properties');
-  var brand = strip($(properties.find('dd')[0]).text());
-  var color = strip($(properties.find('dd')[1]).text());
-  var lenswidth = strip($(properties.find('dd')[2]).text());
-  var lensheight = strip($(properties.find('dd')[3]).text());
-  var bridgewidth = strip($(properties.find('dd')[4]).text());
-  var templewidth = strip($(properties.find('dd')[5]).text());
-  var shape = strip($(properties.find('dd')[6]).text());
-  var rimshape = strip($(properties.find('dd')[7]).text());
-  var material = strip($(properties.find('dd')[8]).text());
-  var temple_material = strip($(properties.find('dd')[9]).text());
-  var nosepad = strip($(properties.find('dd')[10]).text());
-  var fitting = strip($(properties.find('dd')[11]).text());
+  var $properties = $('#product-properties').find('li');
+  var brand = strip($properties.eq(0).find('.value a').text());
+  var color = strip($properties.eq(1).find('.value a').text());
+  var lenswidth = strip($properties.eq(2).find('.value a').text());
+  var lensheight = strip($properties.eq(3).find('.value a').text());
+  var bridgewidth = strip($properties.eq(4).find('.value a').text());
+  var templewidth = strip($properties.eq(5).find('.value a').text());
+  var shape = strip($properties.eq(6).find('.value a').text());
+  var rimshape = strip($properties.eq(7).find('.value a').text());
+  var material = strip($properties.eq(8).find('.value a').text());
+  var temple_material = strip($properties.eq(9).find('.value a').text());
+  var nosepad = strip($properties.eq(10).find('.value a').text());
+  var fitting = strip($properties.eq(11).find('.value a').text());
 
   var information = { name: name,
     sku: sku,
