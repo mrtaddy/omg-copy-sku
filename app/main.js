@@ -1,5 +1,5 @@
 /*jshint strict:false, browser:true */
-/*global $:false */
+/*global $:false, alert:false */
 (function bookmarklet() {
   function strip(string) {
     return string.trim().replace(/[\n\r]/g, '');
@@ -41,5 +41,5 @@
     fitting: fitting
   };
 
-  window.alert(JSON.stringify(information, null, 2));
+  alert(JSON.stringify(information, null, 2));
 }());
