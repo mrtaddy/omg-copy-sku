@@ -9,8 +9,9 @@
     return strip($properties.eq(n).find('.value').text());
   }
 
-  var name = strip($('#content h2[itemprop="name"]').text());
-  var sku = $('#content .images').data('omgProductSku');
+  var $content = $('content')
+  var name = strip($content.find('h2[itemprop="name"]').text());
+  var sku = $content.find('.images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
   var permalink = url.match(/\/([^\/]*)$/)[1];
   var $properties = $('#product-properties').find('li');
