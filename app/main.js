@@ -9,7 +9,7 @@
     return strip($properties.eq(n).find('.value').text());
   }
 
-  var $content = $('content')
+  var $content = $('#content')
   var name = strip($content.find('h2[itemprop="name"]').text());
   var sku = $content.find('.images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
