@@ -3,7 +3,7 @@
   var name = strip($('#content h2[itemprop="name"]').text());
   var sku = $('#content .images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
-  var permalink = url.match(/\/([^/]*)$/)[1];
+  var permalink = url.match(/\/([^\/]*)$/)[1];
   var $properties = $('#product-properties').find('li');
   var brand = strip($properties.eq(0).find('.value a').text());
   var color = strip($properties.eq(1).find('.value a').text());
