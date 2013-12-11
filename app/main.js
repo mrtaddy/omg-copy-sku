@@ -1,22 +1,32 @@
 /*jshint strict:false, browser:true */
+/*global $:false, alert:false */
 (function bookmarklet() {
-  var name = strip($('#content h2[itemprop="name"]').text());
-  var sku = $('#content .images').data('omgProductSku');
+  function strip(string) {
+    return string.trim().replace(/[\n\r]/g, '');
+  }
+
+  function nthProperties($properties, n) {
+    return strip($properties.eq(n).find('.value').text());
+  }
+
+  var $content = $('#content')
+  var name = strip($content.find('h2[itemprop="name"]').text());
+  var sku = $content.find('.images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
-  var permalink = url.match(/\/([^/]*)$/)[1];
-  var $properties = $('#product-properties').find('li');
-  var brand = strip($properties.eq(0).find('.value a').text());
-  var color = strip($properties.eq(1).find('.value a').text());
-  var lenswidth = strip($properties.eq(2).find('.value a').text());
-  var lensheight = strip($properties.eq(3).find('.value a').text());
-  var bridgewidth = strip($properties.eq(4).find('.value a').text());
-  var templewidth = strip($properties.eq(5).find('.value a').text());
-  var shape = strip($properties.eq(6).find('.value a').text());
-  var rimshape = strip($properties.eq(7).find('.value a').text());
-  var material = strip($properties.eq(8).find('.value a').text());
-  var temple_material = strip($properties.eq(9).find('.value a').text());
-  var nosepad = strip($properties.eq(10).find('.value a').text());
-  var fitting = strip($properties.eq(11).find('.value a').text());
+  var permalink = url.match(/\/([^\/]*)$/)[1];
+  var $properties = $content.find('#product-properties').find('li');
+  var brand = nthProperties($properties, 0);
+  var color = nthProperties($properties, 1);
+  var lenswidth = nthProperties($properties, 2);
+  var lensheight = nthProperties($properties, 3);
+  var bridgewidth = nthProperties($properties, 4);
+  var templewidth = nthProperties($properties, 5);
+  var shape = nthProperties($properties, 6);
+  var rimshape = nthProperties($properties, 7);
+  var material = nthProperties($properties, 8);
+  var templeMaterial = nthProperties($properties, 9);
+  var nosepad = nthProperties($properties, 10);
+  var fitting = nthProperties($properties, 11);
 
   var information = { name: name,
     sku: sku,
@@ -31,14 +41,10 @@
     shape: shape,
     rimshape: rimshape,
     material: material,
-    temple_material: temple_material,
+    templeMaterial: templeMaterial,
     nosepad: nosepad,
     fitting: fitting
   };
 
   alert(JSON.stringify(information, null, 2));
-
-  function strip(string) {
-    return string.trim().replace(/[\n\r]/g, '');
-  }
 }());
