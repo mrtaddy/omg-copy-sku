@@ -14,7 +14,7 @@
   var sku = $content.find('.images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
   var permalink = url.match(/\/([^\/]*)$/)[1];
-  var $properties = $('#product-properties').find('li');
+  var $properties = $content.find('#product-properties').find('li');
   var brand = nthProperties($properties, 0);
   var color = nthProperties($properties, 1);
   var lenswidth = nthProperties($properties, 2);
