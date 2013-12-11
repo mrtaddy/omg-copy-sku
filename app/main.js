@@ -1,4 +1,5 @@
 /*jshint strict:false, browser:true */
+/*global $:false */
 (function bookmarklet() {
   function strip(string) {
     return string.trim().replace(/[\n\r]/g, '');
