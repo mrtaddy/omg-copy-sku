@@ -1,5 +1,9 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
+  function strip(string) {
+    return string.trim().replace(/[\n\r]/g, '');
+  }
+
   var name = strip($('#content h2[itemprop="name"]').text());
   var sku = $('#content .images').data('omgProductSku');
   var url = $('meta[rel="canonical"]').attr('href');
@@ -37,8 +41,4 @@
   };
 
   window.alert(JSON.stringify(information, null, 2));
-
-  function strip(string) {
-    return string.trim().replace(/[\n\r]/g, '');
-  }
 }());
