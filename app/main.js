@@ -36,7 +36,7 @@
     fitting: fitting
   };
 
-  alert(JSON.stringify(information, null, 2));
+  window.alert(JSON.stringify(information, null, 2));
 
   function strip(string) {
     return string.trim().replace(/[\n\r]/g, '');
