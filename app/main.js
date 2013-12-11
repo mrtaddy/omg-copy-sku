@@ -14,7 +14,7 @@
   var shape = strip($properties.eq(6).find('.value a').text());
   var rimshape = strip($properties.eq(7).find('.value a').text());
   var material = strip($properties.eq(8).find('.value a').text());
-  var temple_material = strip($properties.eq(9).find('.value a').text());
+  var templeMaterial = strip($properties.eq(9).find('.value a').text());
   var nosepad = strip($properties.eq(10).find('.value a').text());
   var fitting = strip($properties.eq(11).find('.value a').text());
 
@@ -31,7 +31,7 @@
     shape: shape,
     rimshape: rimshape,
     material: material,
-    temple_material: temple_material,
+    templeMaterial: templeMaterial,
     nosepad: nosepad,
     fitting: fitting
   };
