@@ -8,7 +8,7 @@ Copy product sku in ohmyglasses.jp
 ```bash
 $ git clone
 $ npm install
-$ grunt server
+$ grunt
 ```
 
 see `dist/`
